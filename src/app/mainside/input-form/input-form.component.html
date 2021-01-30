@@ -1,0 +1,85 @@
+<div class="panel-group" id="collapse-group"></div>
+    <div class="forInputMain">
+        <div class="textCenter">
+            <ngb-accordion [closeOthers]="true" activeIds="static-1">
+              <ng-container *ngFor="let render of addedName; let i=index">
+              <ng-container *ngIf='addedName[i]'>
+              <ngb-panel  id="static-{{i+1}}" title={{render}}>
+                <ng-template ngbPanelContent>
+                    <!-- edit modal--------------------------------------------------------------------- -->
+                    <ng-template #content let-c="close" let-d="dismiss">
+                        <form (submit)='editLocal(i)'>
+                           
+                         <div class="modal-header">
+                            
+                         <h4 class="modal-title" id="modal-basic-title">Editing</h4>
+                          <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+
+                        <div class="modal-body">                            
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+                                </div>
+                                <input type="text" [(ngModel)]='addedName[i]' name='editName' class="form-control nameInput" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly>
+                              </div>
+            
+                              <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-default">Phone number</span>
+                                </div>
+                                <input type="number" [(ngModel)]='phoneEdit' name='editPhone' class="form-control phoneNumber" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                              </div>
+            
+                              <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <label class="input-group-text" for="inputGroupSelect01">Sex</label>
+                                </div>
+                                <select class="custom-select sexSelect" [(ngModel)]='sexEdit' name='editSex' id="inputGroupSelect01">
+                                  <option selected disabled value="didn't selected">Choose...</option>
+                                  <option value="Male">Male</option>
+                                  <option value="Female">Female</option>
+                                </select>
+                              </div>
+            
+                              <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-default">Age</span>
+                                </div>
+                                <input type="number" [(ngModel)]='ageEdit' name='editAge' class="form-control ageInput" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                              </div>  
+                        </div>
+
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-outline-dark" type='submit' (click)="c('Save click')">Save</button>
+                        </div>
+                        </form>
+                      </ng-template>                
+                    <!-- edit modal--------------------------------------------------------------------- -->
+                    <!-- Properties--------------------------------------------------------------------- -->
+                    <div *ngIf='Properties[i][1]&&Properties[i][3]&&Properties[i][5]&&Properties[i][7]!=="unknown"'>
+                      <ul>
+                        <li>name: {{Properties[i][1]}}</li>
+                        <li>phone: {{Properties[i][3]}}</li>
+                        <li>age: {{Properties[i][5]}}</li>
+                        <li>sex: {{Properties[i][7]}}</li>
+                      </ul>
+                    </div>
+                    <!-- Properties--------------------------------------------------------------------- -->
+                  <div id="el1" class="container"> <button class="edit btn btn-secondary" data-toggle="modal" data-target="#e1" (click)="edit(content)">edit</button>
+                      <button class="delete btn btn-secondary" (click)='deleteButton(i)'>delete</button>
+                      </div>
+
+                </ng-template>
+                </ngb-panel>
+              </ng-container>
+            </ng-container>
+                </ngb-accordion>
+                </div>
+        <input [formControl]='nameAddLocalStorage' class="form-control" type="text" placeholder="Please add a new name"  id="inputMain" value={{nameFromInput}}>
+        <button class="enter btn btn-secondary btn-lg btn-block" (click)="addLocalStorage()">Enter</button></div>
+
+
+
