@@ -1,7 +1,6 @@
-<div *ngIf="auth.isAuthenticated()">
 <div class="panel-group" id="collapse-group"></div>
     <div class="forInputMain">
-        <div class="textCenter" *ngIf="addedName">
+        <div class="textCenter">
             <ngb-accordion [closeOthers]="true" activeIds="static-1">
               <ng-container *ngFor="let render of addedName; let i=index">
               <ng-container *ngIf='addedName[i]'>
@@ -10,30 +9,30 @@
                     <!-- edit modal--------------------------------------------------------------------- -->
                     <ng-template #content let-c="close" let-d="dismiss">
                         <form (submit)='editLocal(i)'>
-
+                           
                          <div class="modal-header">
-
+                            
                          <h4 class="modal-title" id="modal-basic-title">Editing</h4>
                           <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
 
-                        <div class="modal-body">
+                        <div class="modal-body">                            
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text">Name</span>
+                                  <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
                                 </div>
                                 <input type="text" [(ngModel)]='addedName[i]' name='editName' class="form-control nameInput" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly>
                               </div>
-
+            
                               <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                  <span class="input-group-text">Phone number</span>
+                                  <span class="input-group-text" id="inputGroup-sizing-default">Phone number</span>
                                 </div>
                                 <input type="number" [(ngModel)]='phoneEdit' name='editPhone' class="form-control phoneNumber" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                               </div>
-
+            
                               <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                   <label class="input-group-text" for="inputGroupSelect01">Sex</label>
@@ -44,20 +43,20 @@
                                   <option value="Female">Female</option>
                                 </select>
                               </div>
-
+            
                               <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="inputGroup-sizing-default">Age</span>
                                 </div>
                                 <input type="number" [(ngModel)]='ageEdit' name='editAge' class="form-control ageInput" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                              </div>
+                              </div>  
                         </div>
 
                         <div class="modal-footer">
                           <button type="button" class="btn btn-outline-dark" type='submit' (click)="c('Save click')">Save</button>
                         </div>
                         </form>
-                      </ng-template>
+                      </ng-template>                
                     <!-- edit modal--------------------------------------------------------------------- -->
                     <!-- Properties--------------------------------------------------------------------- -->
                     <div *ngIf='Properties[i][1]&&Properties[i][3]&&Properties[i][5]&&Properties[i][7]!=="unknown"'>
@@ -80,7 +79,7 @@
                 </ngb-accordion>
                 </div>
         <input [formControl]='nameAddLocalStorage' class="form-control" type="text" placeholder="Please add a new name"  id="inputMain" value={{nameFromInput}}>
-        <button class="enter btn btn-secondary btn-lg btn-block" (click)="addLocalStorage()" [disabled]="nameAddLocalStorage.invalid">Enter</button></div>
-</div>
+        <button class="enter btn btn-secondary btn-lg btn-block" (click)="addLocalStorage()">Enter</button></div>
+
 
 

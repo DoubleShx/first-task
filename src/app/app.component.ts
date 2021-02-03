@@ -14,12 +14,13 @@ export class AppComponent implements OnInit{
   nameEdit;
 
   constructor() {
-
+    
    }
 
+  public showModal=false;
 
 
-
+  
 
 
   // observable = Observable.create((observer) => {
@@ -33,7 +34,7 @@ export class AppComponent implements OnInit{
     //   data=> console.log(data),
     //   error => console.log(error),
     //   () => console.log('Process completed')
-
+      
     // )
     // console.log('component initialized')
   }

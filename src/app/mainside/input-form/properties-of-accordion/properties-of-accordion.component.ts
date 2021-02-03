@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {WorkWithLocalStorageService} from '../../../work-with-local-storage.service'
+import {WorkWithLocalStorageService} from './../../../work-with-local-storage.service'
 
 @Component({
   selector: 'app-properties-of-accordion',
@@ -9,7 +9,7 @@ import {WorkWithLocalStorageService} from '../../../work-with-local-storage.serv
 export class PropertiesOfAccordionComponent implements OnInit {
   @Input() index;
 public Properties;
-  constructor(WorkWithLocalStorageService:WorkWithLocalStorageService) {
+  constructor(WorkWithLocalStorageService:WorkWithLocalStorageService) { 
     this.Properties=WorkWithLocalStorageService.getproperties();
   }
 
