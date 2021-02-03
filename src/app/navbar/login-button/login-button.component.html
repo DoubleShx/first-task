@@ -1,0 +1,57 @@
+<button class="btn btn-outline-info" [routerLink]="['/admin', 'login']">Login</button>
+
+<!--<ng-template #content let-c="close" let-d="dismiss">-->
+<!--  <form (submit)='submit()' [formGroup]="form">-->
+
+<!--    <div class="modal-header">-->
+
+<!--      <h4 class="modal-title" id="modal-basic-title">Login Modal</h4>-->
+<!--      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">-->
+<!--        <span aria-hidden="true">&times;</span>-->
+<!--      </button>-->
+<!--    </div>-->
+<!--    <div class="alert alert-danger" *ngIf="auth.error$ | async as error">{{error}}</div>-->
+
+<!--    <div class="modal-body">-->
+<!--      <div class="input-group mb-3">-->
+<!--        <div class="input-group-prepend">-->
+<!--          <span class="input-group-text">Mail</span>-->
+<!--        </div>-->
+<!--        <input type="text" formControlName="email" name='email' class="form-control">-->
+<!--      </div>-->
+
+<!--      <div style="width: 100%; margin: 0 auto" *ngIf="form.get('email').touched">-->
+
+<!--          <div *ngIf="form.get('email').invalid">-->
+<!--            <p *ngIf="form.get('email').errors.required" class="bug">Заполните поле email</p>-->
+<!--            <p *ngIf="form.get('email').errors.email" class="bug">Введите почту пример example@mail.ru</p>-->
+<!--          </div>-->
+
+<!--      </div>-->
+
+
+
+<!--      <div class="input-group mb-3">-->
+<!--        <div class="input-group-prepend">-->
+<!--          <span class="input-group-text">Password</span>-->
+<!--        </div>-->
+<!--        <input type="text" formControlName="password" name='password' class="form-control">-->
+<!--      </div>-->
+
+<!--      <div style="width: 100%; margin: 0 auto" *ngIf="form.get('password').touched">-->
+
+<!--        <div *ngIf="form.get('password').invalid">-->
+<!--          <p *ngIf="form.get('password').errors.required" class="bug">Заполните поле password</p>-->
+<!--          <p *ngIf="form.get('password').errors.minlength" class="bug">Введите минимум {{form.get('password').errors.minlength.requiredLength}} символов, введено-->
+<!--          {{form.get('password').errors.minlength.actualLength}}</p>-->
+<!--        </div>-->
+
+<!--      </div>-->
+
+<!--    <div class="modal-footer">-->
+<!--      <button class="btn btn-outline-dark" type='submit' (click)="c('Save click')" [disabled]="form.invalid || submitted">Save</button>-->
+<!--    </div>-->
+<!--    </div>-->
+<!--  </form>-->
+<!--</ng-template>-->
+

@@ -1,0 +1,16 @@
+.fixedButton {
+    z-index: 9999;
+    position:fixed;
+    bottom: 20px;
+    right:20px;
+    width: 75px;
+    height: 75px;
+    border-radius: 43px;
+    border: solid grey 5px;
+    background-image: url(../../../../assets/de.png);
+    background-repeat: no-repeat;
+    background-color: darkslategrey;
+}
+.buttonImg {
+    border-radius: 43px;
+}
