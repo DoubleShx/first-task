@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {AuthService} from './auth.service';
+import {AuthService} from '../admin/auth.service';
 import {LoginButtonComponent} from '../navbar/login-button/login-button.component';
-import {WorkWithLocalStorageService} from './work-with-local-storage.service';
+import {WorkWithLocalStorageService} from '../work-with-local-storage.service';
 import {RouterModule} from '@angular/router';
 
 
@@ -13,20 +13,20 @@ import {RouterModule} from '@angular/router';
 @NgModule({
   declarations: [LoginButtonComponent],
     imports: [
+        CommonModule,
         HttpClientModule,
         NgbModule,
         FormsModule,
         ReactiveFormsModule,
-        RouterModule
+        RouterModule,
     ],
-  providers: [],
+  providers: [AuthService],
   exports: [
     HttpClientModule,
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    LoginButtonComponent,
-
+    LoginButtonComponent
   ]
 })
 export class SharedModule { }

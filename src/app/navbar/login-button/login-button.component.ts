@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {NgbModal, NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {AuthService} from '../../shared/auth.service';
+import {AuthService} from '../../admin/auth.service';
 import {Router} from '@angular/router';
 import {User} from '../../shared/shared';
 

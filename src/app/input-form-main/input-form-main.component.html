@@ -1,1 +1,34 @@
-<p>input-form-main works!</p>
+<div class="panel-group" id="collapse-group"></div>
+<div class="forInputMain">
+  <div class="textCenter" *ngIf="addedName">
+    <ngb-accordion [closeOthers]="true" activeIds="static-1">
+      <ng-container *ngFor="let render of addedName; let i=index">
+        <ng-container *ngIf='addedName[i]'>
+          <ngb-panel id="static-{{i+1}}" title={{render.value}} [disabled]="!addedName[i].value ||
+          !addedName[i].age || !addedName[i].sex || !addedName[i].phone">
+            <ng-template ngbPanelContent>
+
+
+              <!-- Properties--------------------------------------------------------------------- -->
+              <div>
+                <ul>
+                  <li>name: {{addedName[i].value}}</li>
+                  <li>phone: {{addedName[i].phone}}</li>
+                  <li>age: {{addedName[i].age}}</li>
+                  <li>sex: {{addedName[i].sex}}</li>
+                </ul>
+              </div>
+              <!-- Properties--------------------------------------------------------------------- -->
+
+
+            </ng-template>
+          </ngb-panel>
+        </ng-container>
+      </ng-container>
+    </ngb-accordion>
+  </div>
+
+
+
+
+
