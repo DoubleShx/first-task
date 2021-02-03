@@ -1,21 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainsideComponent } from './mainside.component';
+import { MainPageAuthorizedComponent } from './main-page-authorized.component';
 
-
-describe('MainsideComponent', () => {
-  let component: MainsideComponent;
-  let fixture: ComponentFixture<MainsideComponent>;
+describe('MainPageAuthorizedComponent', () => {
+  let component: MainPageAuthorizedComponent;
+  let fixture: ComponentFixture<MainPageAuthorizedComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainsideComponent ]
+      declarations: [ MainPageAuthorizedComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MainsideComponent);
+    fixture = TestBed.createComponent(MainPageAuthorizedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

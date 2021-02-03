@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {WorkWithLocalStorageService} from '../work-with-local-storage.service';
 
 @Component({
   selector: 'app-input-form-main',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./input-form-main.component.scss']
 })
 export class InputFormMainComponent implements OnInit {
+  public Properties = [];
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(public workWithLocalStorage: WorkWithLocalStorageService) {
   }
 
+  public addedName = this.workWithLocalStorage.getState();
+
+  ngOnInit() {
+    this.Properties = this.workWithLocalStorage.getproperties();
+  }
 }

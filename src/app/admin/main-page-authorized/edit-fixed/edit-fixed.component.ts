@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import {WorkWithLocalStorageService} from './../work-with-local-storage.service'
+import {WorkWithLocalStorageService} from '../../../work-with-local-storage.service'
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -19,7 +19,7 @@ export class EditFixedComponent implements OnInit {
   public addedFixedNames;
   public phoneFixedEdit;
   public sexFixedEdit;
-  public ageFixedEdit;  
+  public ageFixedEdit;
 
   constructor(config: NgbModalConfig, private modalService: NgbModal, WorkWithLocalStorageService:WorkWithLocalStorageService) {
     // ----------------------------------------------------------------
@@ -28,7 +28,7 @@ export class EditFixedComponent implements OnInit {
     // ----------------------------------------------------------------
     this.selectorName=WorkWithLocalStorageService.getState();
     this.propertiesToShow=WorkWithLocalStorageService.getproperties();
-    
+
     // ----------------------------------------------------------------
   }
 
@@ -46,17 +46,17 @@ export class EditFixedComponent implements OnInit {
     this.addedFixedNames=$event;
     this.phoneFixedEdit='';
     this.ageFixedEdit='';
-    this.sexFixedEdit='';       
+    this.sexFixedEdit='';
     this.indexOfSelectedName=this.selectorName.indexOf($event)
     if(this.propertiesToShow[this.indexOfSelectedName][3]!='unknown'){
-    this.phoneFixedEdit=parseFloat(this.propertiesToShow[this.indexOfSelectedName][3]) 
+    this.phoneFixedEdit=parseFloat(this.propertiesToShow[this.indexOfSelectedName][3])
     }
     if(this.propertiesToShow[this.indexOfSelectedName][5]!='unknown'){
     this.ageFixedEdit=parseFloat(this.propertiesToShow[this.indexOfSelectedName][5])
     }
     if(this.propertiesToShow[this.indexOfSelectedName][7]!='unknown'){
     this.sexFixedEdit=this.propertiesToShow[this.indexOfSelectedName][7]
-    }    
+    }
   }
 
 
@@ -65,7 +65,7 @@ export class EditFixedComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  
+
   }
 
 }
