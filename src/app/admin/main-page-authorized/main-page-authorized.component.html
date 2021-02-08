@@ -14,18 +14,20 @@
         <a [routerLink]="['/admin', 'createtask']" class="nav-link">Create Tasks</a>
       </li>
       <li>
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+               [(ngModel)]="searchStr" (change)="onchange()">
 
       </li>
-      <li><button class="btn btn-outline-info" type="submit">Search</button></li>
+<!--      <li><button class="btn btn-outline-info" type="submit">Search</button></li>-->
     </ul>
     <div class="d-flex">
     </div>
-    <button class="btn btn-outline-info" type="toggle" (click)="auth.logout()" *ngIf="auth.isAuthenticated()">Logout</button>
+    <button class="btn btn-outline-info" type="toggle" (click)="logout()" *ngIf="auth.isAuthenticated()">Logout</button>
     <app-login-button *ngIf="!auth.isAuthenticated()"></app-login-button>
   </div>
 </nav>
 <app-edit-fixed *ngIf="auth.isAuthenticated()"></app-edit-fixed>
+<div *ngIf="message && isVisible" class="alert-info">{{message}}</div>
 
 <router-outlet></router-outlet>
 

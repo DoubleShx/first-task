@@ -1,7 +1,5 @@
 import {Injectable} from '@angular/core';
-import {DomSanitizer} from '@angular/platform-browser';
-import {BehaviorSubject, Observable, Subject, Subscription} from 'rxjs';
-import {of, from, interval} from 'rxjs';
+import {Observable} from 'rxjs';
 import {environment} from '../environments/environment';
 import {map} from 'rxjs/operators';
 import {HttpClient} from '@angular/common/http';
@@ -42,7 +40,11 @@ export class WorkWithLocalStorageService {
   update(properties): Observable<any> {
     return this.http.patch(`${environment.fbDbUrl}/names/${properties.id}.json`, properties);
   }
+  remove(id) {
+    return this.http.delete(`${environment.fbDbUrl}/names/${id}.json`)
+  }
 }
+
 
 
 // private State = Object.keys(localStorage);

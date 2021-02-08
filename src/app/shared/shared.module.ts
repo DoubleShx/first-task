@@ -7,11 +7,12 @@ import {AuthService} from '../admin/auth.service';
 import {LoginButtonComponent} from '../navbar/login-button/login-button.component';
 import {WorkWithLocalStorageService} from '../work-with-local-storage.service';
 import {RouterModule} from '@angular/router';
+import { SearchPipe } from './search.pipe';
 
 
 
 @NgModule({
-  declarations: [LoginButtonComponent],
+  declarations: [LoginButtonComponent, SearchPipe],
     imports: [
         CommonModule,
         HttpClientModule,
@@ -26,7 +27,8 @@ import {RouterModule} from '@angular/router';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    LoginButtonComponent
+    LoginButtonComponent,
+    SearchPipe
   ]
 })
 export class SharedModule { }

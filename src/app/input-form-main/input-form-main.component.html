@@ -2,7 +2,7 @@
 <div class="forInputMain">
   <div class="textCenter" *ngIf="addedName">
     <ngb-accordion [closeOthers]="true" activeIds="static-1">
-      <ng-container *ngFor="let render of addedName; let i=index">
+      <ng-container *ngFor="let render of addedName | search: searchStr; let i=index">
         <ng-container *ngIf='addedName[i]'>
           <ngb-panel id="static-{{i+1}}" title={{render.value}} [disabled]="!addedName[i].value ||
           !addedName[i].age || !addedName[i].sex || !addedName[i].phone">

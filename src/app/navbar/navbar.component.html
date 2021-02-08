@@ -14,10 +14,10 @@
                     <a [routerLink]="['/tasks', '2312341']" class="nav-link">Tasks</a>
                 </li>
               <li>
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchStr" (change)="onChange()">
 
               </li>
-              <li><button class="btn btn-outline-info" type="submit">Search</button></li>
+<!--              <li><button class="btn btn-outline-info" type="submit">Search</button></li>-->
             </ul>
           <div class="d-flex">
             <app-login-button *ngIf="!auth.isAuthenticated()"></app-login-button>

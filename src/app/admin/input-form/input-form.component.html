@@ -1,9 +1,10 @@
 <div *ngIf="auth.isAuthenticated()">
+  <div *ngIf="addedName; else loading"></div>
 <div class="panel-group" id="collapse-group"></div>
     <div class="forInputMain">
         <div class="textCenter" *ngIf="addedName">
             <ngb-accordion [closeOthers]="true" activeIds="static-1">
-              <ng-container *ngFor="let render of addedName; let i=index">
+              <ng-container *ngFor="let render of addedName | search: searchStr; let i=index">
               <ng-container *ngIf='addedName[i]'>
               <ngb-panel  id="static-{{i+1}}" title={{render.value}}>
                 <ng-template ngbPanelContent>
@@ -81,6 +82,14 @@
                 </div>
         <input [formControl]='nameAddLocalStorage' class="form-control" type="text" placeholder="Please add a new name"  id="inputMain" value={{nameFromInput}}>
         <button class="enter btn btn-secondary btn-lg btn-block" (click)="addLocalStorage()" [disabled]="nameAddLocalStorage.invalid">Enter</button></div>
+  <ng-template #loading>
+    <div class="spinner-border text-primary" role="status">
+    </div>
+  </ng-template>
+
+
+
 </div>
+<button (click)="testing()">23123124</button>
 
 

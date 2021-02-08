@@ -2,23 +2,24 @@
 
 <ng-template #content let-c="close" let-d="dismiss">
     <form (submit)='editLocalStorage()'>
-       
+
      <div class="modal-header">
-        
+
      <h4 class="modal-title" id="modal-basic-title">Editing</h4>
       <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
 
-    <div class="modal-body">                            
+    <div class="modal-body">
         <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
             </div>
-            <select class="custom-select sexSelect" [ngModel]='addedFixedNames' (ngModelChange)='onChange($event)' name='nameEditFixed' id="inputGroupSelect01">
+            <select class="custom-select sexSelect" [(ngModel)]='addedFixedNames'
+                    (ngModelChange)='onChange($event)' name='nameEditFixed' id="inputGroupSelect01">
                 <option selected disabled value="didn't selected">Choose...</option>
-                <option *ngFor='let key of selectorName' [value]="key">{{key}}</option>
+                <option *ngFor='let key of selectorName' [value]="key.value">{{key.value}}</option>
               </select>
           </div>
 
@@ -45,11 +46,11 @@
               <span class="input-group-text" id="inputGroup-sizing-default">Age</span>
             </div>
             <input type="number" [(ngModel)]='ageFixedEdit' name='editAgeFixed' class="form-control ageInput" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-          </div>  
+          </div>
     </div>
 
     <div class="modal-footer">
       <button type="button" class="btn btn-outline-dark" type='submit' (click)="c('Save click')">Save</button>
     </div>
     </form>
-  </ng-template>                
+  </ng-template>

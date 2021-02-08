@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../auth.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {User} from '../../shared/shared';
+import {MessageService} from '../message.service';
 
 @Component({
   selector: 'app-login-page',
@@ -18,7 +19,8 @@ export class LoginPageComponent implements OnInit {
   constructor(
     public auth: AuthService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public messageService: MessageService
   ) {
   }
 
@@ -57,6 +59,7 @@ export class LoginPageComponent implements OnInit {
       this.form.reset();
       this.router.navigate(['/admin']);
       this.submitted = false;
+      this.messageService.streamMessage$.next('Добро пожаловать!');
     }, () => {
       this.submitted = false;
     });
